@@ -1,0 +1,27 @@
+package br.com.dsacrament.booklist.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.io.Serial;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "tb_roles")
+@SequenceGenerator(name = "seq_roles", sequenceName = "seq_roles", allocationSize = 1, initialValue = 1)
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Role implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_roles")
+    private Long id;
+
+    @Column(name = "nome_desc", nullable = false, unique = true, length = 50)
+    private String nomeDesc;
+}
