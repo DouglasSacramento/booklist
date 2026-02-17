@@ -48,7 +48,7 @@ public class Pessoa implements Serializable {
     @JoinColumn(
             name = "usuario_id",
             referencedColumnName = "id",
-            foreignKey = @ForeignKey(name = "fk_usuario")
+            foreignKey = @ForeignKey(name = "usuario_fk")
     )
     private Usuario usuario;
 }

@@ -62,7 +62,8 @@ public class Livro implements Serializable {
     @ManyToOne
     @JoinColumn(
             name = "pessoa_id",
-            foreignKey = @ForeignKey(name = "fk_pessoa")
+            nullable = false,
+            foreignKey = @ForeignKey(name = "pessoa_fk")
     )
     private Pessoa pessoa;
 
@@ -71,11 +72,11 @@ public class Livro implements Serializable {
             name = "tb_livros_categorias",
             joinColumns = @JoinColumn(
                     name = "livro_id",
-                    foreignKey = @ForeignKey(name = "fk_livro_categoria")
+                    foreignKey = @ForeignKey(name = "livro_categoria_fk")
             ),
             inverseJoinColumns = @JoinColumn(
                     name = "categoria_id",
-                    foreignKey = @ForeignKey(name = "fk_categoria_livro")
+                    foreignKey = @ForeignKey(name = "categoria_livro_fk")
             )
     )
     private List<Categoria> categorias;

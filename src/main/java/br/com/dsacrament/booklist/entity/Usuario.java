@@ -52,11 +52,11 @@ public class Usuario implements UserDetails {
             ),
             joinColumns = @JoinColumn(
                     name = "usuario_id",
-                    foreignKey = @ForeignKey(name = "fk_usuario_role")
+                    foreignKey = @ForeignKey(name = "usuario_role_fk")
             ),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id",
-                    foreignKey = @ForeignKey(name = "fk_role_usuario")
+                    foreignKey = @ForeignKey(name = "role_usuario_fk")
 
             )
     )
