@@ -60,14 +60,23 @@ public class Livro implements Serializable {
     private StatusLivro statusLivro;
 
     @ManyToOne
-    @JoinColumn(name = "pessoa_id")
+    @JoinColumn(
+            name = "pessoa_id",
+            foreignKey = @ForeignKey(name = "fk_pessoa")
+    )
     private Pessoa pessoa;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "tb_livros_categorias",
-            joinColumns = @JoinColumn(name = "livro_id"),
-            inverseJoinColumns = @JoinColumn(name = "categoria_id")
+            joinColumns = @JoinColumn(
+                    name = "livro_id",
+                    foreignKey = @ForeignKey(name = "fk_livro_categoria")
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "categoria_id",
+                    foreignKey = @ForeignKey(name = "fk_categoria_livro")
+            )
     )
     private List<Categoria> categorias;
 

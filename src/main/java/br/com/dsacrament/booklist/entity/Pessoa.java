@@ -45,6 +45,10 @@ public class Pessoa implements Serializable {
     private List<Livro> livros;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    @JoinColumn(
+            name = "usuario_id",
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "fk_usuario")
+    )
     private Usuario usuario;
 }
