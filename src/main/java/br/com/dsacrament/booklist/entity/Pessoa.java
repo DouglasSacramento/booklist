@@ -31,10 +31,12 @@ public class Pessoa implements Serializable {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, name = "data_nasc")
+    @Column(nullable = false,
+            name = "data_nasc")
     private LocalDate dataNasc;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false,
+            unique = true)
     private String cpf;
 
     @Column(name = "data_criacao")

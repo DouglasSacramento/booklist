@@ -41,10 +41,11 @@ public class Livro implements Serializable {
     @Column(name = "image_url")
     private String imageUrl;
 
+    @Column(nullable = false)
     private String isbn;
 
     @Column(nullable = false)
-    private int paginas;
+    private Integer paginas;
 
     @Column(name = "data_criacao")
     @CreationTimestamp

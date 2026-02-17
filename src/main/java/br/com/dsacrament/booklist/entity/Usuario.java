@@ -29,7 +29,8 @@ public class Usuario implements UserDetails {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false,
+            unique = true)
     private String login;
 
     @Column(nullable = false)
