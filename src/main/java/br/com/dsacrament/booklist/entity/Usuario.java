@@ -46,8 +46,19 @@ public class Usuario implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "tb_usuarios_roles",
-            joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
+            uniqueConstraints = @UniqueConstraint(
+                    columnNames = {"usuario_id", "role_id"},
+                    name = "unique_role_user"
+            ),
+            joinColumns = @JoinColumn(
+                    name = "usuario_id",
+                    foreignKey = @ForeignKey(name = "fk_usuario_role")
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id",
+                    foreignKey = @ForeignKey(name = "fk_role_usuario")
+
+            )
     )
     private List<Role> roles;
 
