@@ -13,6 +13,7 @@ import java.io.Serial;
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Role implements GrantedAuthority {
 
     @Serial
@@ -20,6 +21,7 @@ public class Role implements GrantedAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_roles")
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(name = "nome_desc", nullable = false, unique = true, length = 50)

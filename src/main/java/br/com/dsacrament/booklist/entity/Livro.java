@@ -2,10 +2,7 @@ package br.com.dsacrament.booklist.entity;
 
 import br.com.dsacrament.booklist.enums.StatusLivro;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -21,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Livro implements Serializable {
 
     @Serial
@@ -28,6 +26,7 @@ public class Livro implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_livros")
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(nullable = false)

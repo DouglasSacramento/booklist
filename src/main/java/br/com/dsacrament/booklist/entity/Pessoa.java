@@ -1,10 +1,7 @@
 package br.com.dsacrament.booklist.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serial;
@@ -18,7 +15,9 @@ import java.util.List;
 @SequenceGenerator(name = "seq_pessoas", sequenceName = "seq_pessoas", allocationSize = 1, initialValue = 1)
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter@Setter
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Pessoa implements Serializable {
 
     @Serial
@@ -26,6 +25,7 @@ public class Pessoa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoas")
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(nullable = false)
