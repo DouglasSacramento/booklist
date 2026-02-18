@@ -9,7 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.io.Serial;
 import java.time.Instant;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_usuarios")
@@ -60,7 +61,7 @@ public class Usuario implements UserDetails {
 
             )
     )
-    private List<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

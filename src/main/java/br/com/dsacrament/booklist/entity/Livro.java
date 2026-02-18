@@ -9,7 +9,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_livros")
@@ -79,6 +80,6 @@ public class Livro implements Serializable {
                     foreignKey = @ForeignKey(name = "categoria_livro_fk")
             )
     )
-    private List<Categoria> categorias;
+    private Set<Categoria> categorias = new HashSet<>();
 
 }
