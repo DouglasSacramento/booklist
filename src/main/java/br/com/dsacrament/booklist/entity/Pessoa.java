@@ -39,6 +39,10 @@ public class Pessoa implements Serializable {
             unique = true)
     private String cpf;
 
+    @Column(nullable = false,
+    unique = true)
+    private String email;
+
     @Column(name = "data_criacao")
     @CreationTimestamp
     private Instant dataCriacao;
