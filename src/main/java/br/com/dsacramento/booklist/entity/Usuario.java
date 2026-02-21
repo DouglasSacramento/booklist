@@ -28,7 +28,7 @@ public class Usuario implements Serializable {
 
     @Column(nullable = false,
             unique = true)
-    private String login;
+    private String email;
 
     @Column(nullable = false)
     private String senha;
@@ -37,7 +37,7 @@ public class Usuario implements Serializable {
     @Column(name = "ultimo_login")
     private Instant ultimoLogin;
 
-    @OneToOne(mappedBy = "usuario")
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Pessoa pessoa;
 
     @ManyToMany(fetch = FetchType.EAGER)

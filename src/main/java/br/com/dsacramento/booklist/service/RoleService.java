@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RoleService {
 
-    private RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
     public List<Role> findAll(){
         return roleRepository.findAll();

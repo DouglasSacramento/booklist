@@ -1,6 +1,8 @@
 package br.com.dsacramento.booklist.entity;
 
 import br.com.dsacramento.booklist.enums.StatusLivro;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -66,8 +68,10 @@ public class Livro implements Serializable {
             nullable = false,
             foreignKey = @ForeignKey(name = "pessoa_fk")
     )
+    @JsonIncludeProperties("id")
     private Pessoa pessoa;
 
+    @JsonIgnoreProperties("livros")
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "tb_livros_categorias",
@@ -81,5 +85,4 @@ public class Livro implements Serializable {
             )
     )
     private Set<Categoria> categorias = new HashSet<>();
-
 }

@@ -1,5 +1,7 @@
 package br.com.dsacramento.booklist.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -39,22 +41,22 @@ public class Pessoa implements Serializable {
             unique = true)
     private String cpf;
 
-    @Column(nullable = false,
-    unique = true)
-    private String email;
-
     @Column(name = "data_criacao")
     @CreationTimestamp
     private Instant dataCriacao;
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Livro> livros;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "usuario_id",
             referencedColumnName = "id",
-            foreignKey = @ForeignKey(name = "usuario_fk")
+            unique = true,
+            nullable = false,
+            foreignKey = @ForeignKey(name = "pessoa_usuario_fk")
     )
     private Usuario usuario;
 }
