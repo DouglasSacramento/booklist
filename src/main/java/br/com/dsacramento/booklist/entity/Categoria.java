@@ -24,8 +24,8 @@ public class Categoria implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(name = "nome_desc",
+    @Column(name = "nome",
             nullable = false,
             unique = true, length = 50)
-    private String nomeDesc;
+    private String nome;
 }

@@ -2,9 +2,9 @@ package br.com.dsacramento.booklist.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serial;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "tb_roles")
@@ -14,7 +14,7 @@ import java.io.Serial;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Role implements GrantedAuthority {
+public class Role implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -24,13 +24,8 @@ public class Role implements GrantedAuthority {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(name = "nome_desc",
+    @Column(name = "nome",
             nullable = false,
             unique = true, length = 50)
-    private String nomeDesc;
-
-    @Override
-    public String getAuthority() {
-        return this.nomeDesc;
-    }
+    private String nome;
 }

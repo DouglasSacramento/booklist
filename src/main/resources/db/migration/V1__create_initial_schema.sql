@@ -103,7 +103,7 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.tb_categorias (
                                       id bigint NOT NULL,
-                                      nome_desc character varying(50) NOT NULL
+                                      nome character varying(50) NOT NULL
 );
 
 
@@ -162,7 +162,7 @@ CREATE TABLE public.tb_pessoas (
 
 CREATE TABLE public.tb_roles (
                                  id bigint NOT NULL,
-                                 nome_desc character varying(50) NOT NULL
+                                 nome character varying(50) NOT NULL
 );
 
 
