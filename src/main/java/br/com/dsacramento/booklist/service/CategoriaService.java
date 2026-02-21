@@ -1,7 +1,7 @@
-package br.com.dsacrament.booklist.service;
+package br.com.dsacramento.booklist.service;
 
-import br.com.dsacrament.booklist.entity.Categoria;
-import br.com.dsacrament.booklist.repository.CategoriaRepository;
+import br.com.dsacramento.booklist.entity.Categoria;
+import br.com.dsacramento.booklist.repository.CategoriaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

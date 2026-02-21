@@ -1,4 +1,4 @@
-package br.com.dsacrament.booklist;
+package br.com.dsacramento.booklist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

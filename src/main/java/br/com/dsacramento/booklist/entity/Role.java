@@ -1,4 +1,4 @@
-package br.com.dsacrament.booklist.entity;
+package br.com.dsacramento.booklist.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

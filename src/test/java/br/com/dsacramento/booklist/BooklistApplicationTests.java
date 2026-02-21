@@ -1,4 +1,4 @@
-package br.com.dsacrament.booklist;
+package br.com.dsacramento.booklist;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

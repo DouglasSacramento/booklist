@@ -1,4 +1,4 @@
-package br.com.dsacrament.booklist.enums;
+package br.com.dsacramento.booklist.enums;
 
 import lombok.Getter;
 

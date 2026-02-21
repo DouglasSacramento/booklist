@@ -1,7 +1,7 @@
-package br.com.dsacrament.booklist.controller;
+package br.com.dsacramento.booklist.controller;
 
-import br.com.dsacrament.booklist.entity.Categoria;
-import br.com.dsacrament.booklist.service.CategoriaService;
+import br.com.dsacramento.booklist.entity.Categoria;
+import br.com.dsacramento.booklist.service.CategoriaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

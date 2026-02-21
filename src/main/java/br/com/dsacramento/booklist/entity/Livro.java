@@ -1,6 +1,6 @@
-package br.com.dsacrament.booklist.entity;
+package br.com.dsacramento.booklist.entity;
 
-import br.com.dsacrament.booklist.enums.StatusLivro;
+import br.com.dsacramento.booklist.enums.StatusLivro;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
