@@ -33,9 +33,7 @@ public class Usuario implements Serializable {
     @Column(nullable = false)
     private String senha;
 
-    // atualizar esse campo manualmente no seu Service toda vez que o usuário autenticar com sucesso.
-    @Column(name = "ultimo_login")
-    private Instant ultimoLogin;
+    private Boolean ativo = true;
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Pessoa pessoa;
