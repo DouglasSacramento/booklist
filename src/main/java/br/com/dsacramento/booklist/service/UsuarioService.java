@@ -26,9 +26,6 @@ public class UsuarioService {
     }
 
     public Usuario save(Usuario usuario){
-        if (usuario.getPessoa() != null) {
-            usuario.getPessoa().setUsuario(usuario);
-        }
         return usuarioRepository.save(usuario);
     }
 

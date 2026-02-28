@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,8 +26,7 @@ public class Usuario implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(nullable = false,
-            unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -35,8 +34,13 @@ public class Usuario implements Serializable {
 
     private Boolean ativo = true;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private Pessoa pessoa;
+    @Column(nullable = false)
+    private String nome;
+
+    @Column(unique = true)
+    private String cpf;
+
+    private LocalDate dataNasc;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -52,8 +56,10 @@ public class Usuario implements Serializable {
             inverseJoinColumns = @JoinColumn(
                     name = "role_id",
                     foreignKey = @ForeignKey(name = "role_usuario_fk")
-
             )
     )
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "usuario")
+    private Set<Livro> livros = new HashSet<>();
 }
