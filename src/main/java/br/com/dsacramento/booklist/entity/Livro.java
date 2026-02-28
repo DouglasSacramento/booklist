@@ -1,6 +1,7 @@
 package br.com.dsacramento.booklist.entity;
 
 import br.com.dsacramento.booklist.enums.StatusLivro;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import jakarta.persistence.*;
@@ -64,12 +65,11 @@ public class Livro implements Serializable {
 
     @ManyToOne
     @JoinColumn(
-            name = "pessoa_id",
+            name = "usuario_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "pessoa_fk")
-    )
-    @JsonIncludeProperties("id")
-    private Pessoa pessoa;
+            foreignKey = @ForeignKey(name = "usuario_fk"))
+    @JsonIncludeProperties("nome")
+    private Usuario usuario;
 
     @JsonIgnoreProperties("livros")
     @ManyToMany(fetch = FetchType.EAGER)

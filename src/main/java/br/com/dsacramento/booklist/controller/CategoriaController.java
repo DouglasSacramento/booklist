@@ -2,6 +2,7 @@ package br.com.dsacramento.booklist.controller;
 
 import br.com.dsacramento.booklist.entity.Categoria;
 import br.com.dsacramento.booklist.service.CategoriaService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Categorias")
 @RestController
 @RequestMapping("/categorias")
 @RequiredArgsConstructor
