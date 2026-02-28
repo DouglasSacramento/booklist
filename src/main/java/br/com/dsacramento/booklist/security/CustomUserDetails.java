@@ -20,7 +20,7 @@ public class CustomUserDetails implements UserDetails {
     }
 
     public String getName(){
-        return user.getPessoa().getNome();
+        return user.getNome();
     }
 
     public String getEmail(){
